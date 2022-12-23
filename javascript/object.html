@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // const superman = {
+        //     name : 'clark',
+        //     age : 30,
+        // }
+        // superman.hairColor = 'black';
+        // superman['hobby'] = 'football';
+        // // delete superman.age;
+        // console.log(superman);
+
+        // function makeObject(name, age) {
+        //     return {
+        //         name : name,
+        //         age : age,
+        //         hobby : 'football'
+        //     }
+        // }
+
+        // let makeObject = (name, age) => {
+        //     return {
+        //         name : name,
+        //         age : age,
+        //         hobby : 'football'
+        //     }
+        // }
+        // const Mike = makeObject('Mike', 30);
+        // console.log(Mike);
+
+        function isAdult(user) {
+            if(!('age' in user ) || user.age < 20) {
+                return false;
+            } else {
+                return true;
+            }
+        }
+        const Mike = {
+            name : 'Mike',
+            age : 30
+        }
+
+        const Jane = {
+            name : 'Jane',
+        }
+        console.log(isAdult(Jane));
+        for(x in Mike) {
+            console.log(x);
+            console.log(Mike[x]);
+        }
+    </script>
+</body>
+</html>
