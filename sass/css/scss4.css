@@ -1,0 +1,26 @@
+.a {
+  height: 100px;
+  background-color: yellow;
+}
+
+.b {
+  height: 200px;
+  background-color: #cccc00;
+}
+
+.c {
+  position: relative;
+}
+.c article {
+  width: 200px;
+  height: 200px;
+  background-color: red;
+}
+.c > section {
+  position: absolute;
+  width: calc(100% - 200px);
+  height: 200px;
+  background-color: blue;
+  top: 0;
+  right: 0;
+}/*# sourceMappingURL=scss4.css.map */

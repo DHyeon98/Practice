@@ -1,0 +1,30 @@
+$a-height: 100px;
+$a-background-color: yellow;
+
+.a {
+    height: $a-height;
+    background-color: $a-background-color;
+}
+
+.b {
+    height: $a-height * 2;
+    background-color: darken($a-background-color, 10%);
+}
+
+.c {
+    position: relative;
+
+    article {
+        width: 200px;
+        height: 200px;
+        background-color: red;
+    }
+    & > section {
+        position: absolute;
+        width: calc(100% - 200px);
+        height: 200px;
+        background-color: blue;
+        top: 0;
+        right: 0;
+    }
+}

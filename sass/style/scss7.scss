@@ -1,0 +1,102 @@
+/* 폰트 불러오기 */
+@import url(https://fonts.googleapis.com/earlyaccess/jejugothic.css);
+
+/* 폰트 적용 */
+body {
+    font-family: 'Jeju Gothic', serif;
+}
+/* 노말라이즈 시작 */
+// 노말라이즈 라이브러리 불러오기
+@import "https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css";
+
+// 커스텀 처리
+body, ul, li {
+    padding:0;
+    margin:0;
+    list-style:none;
+}
+
+a {
+    color:inherit;
+    text-decoration:none;
+}
+/* 노말라이즈 끝 */
+nav.top-menu {
+    $second-menu-height: 300px;
+    // position: relative;
+    text-align: center;
+    & > ul {
+        display: inline-block;
+            &:hover > li > ul {
+                display: block;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            a {
+                display: block;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            &::after {
+                content: '';
+                clear: both;
+                display: block;
+            }
+
+            & > li {
+                position: relative;
+                float: left;
+
+                & a {
+                    padding: 10px 50px;
+                    font-size: 14px;
+                    font-weight: bold;
+                    letter-spacing: 0.5px;
+                }
+            }
+            & > li > ul {
+                background-color: beige;
+                padding: 10px;
+                display: none;
+                position: absolute;
+                box-sizing: border-box;
+                top: 100%;
+                width: 100%;
+                height: $second-menu-height;
+                left: 0;
+                z-index: 2;
+                &::after {
+                    content: '';
+                    position: absolute;
+                    top: 0; left: -0.5px;
+                    width: 1px;
+                    height: 100%;
+                    background-color: aqua;
+                }
+            }
+            & > li:first-child > ul {
+                &::after {
+                    display: none;
+                }
+            }
+    }
+    .second-menu-background {
+        display: none;
+        height: $second-menu-height;
+        background-color: #fff;
+        position: absolute;
+        width: 100%;
+        top: 100%; left: 0;
+    }
+    & > ul:hover + .second-menu-background {
+        display: block;
+        z-index: 1;
+    }
+}
+
+div.contents {
+    background-color: gray;
+    min-height: 10000px;
+}

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .alert-box {
+            position: relative;
+            display: none;
+            width: 300px; height: 100px;
+            background-color: aqua;
+        }
+        .alert-box > button {
+            position: absolute;
+            bottom: 10px; right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="alert-box" id="alert">
+        <p>Alert 박스</p>
+        <button onclick="알림창('none')">알림창 닫기</button>
+    </div>
+    <button onclick="알림창('block')">알림창 열기</button>
+
+    <script>
+        function 알림창(a) {
+            document.querySelector('#alert').style.display = a;
+        }
+    </script>
+</body>
+</html>

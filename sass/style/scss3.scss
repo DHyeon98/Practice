@@ -1,0 +1,56 @@
+$col-spacing: 10px;
+$maxGrid: 24;
+
+@for $max from 1 through $maxGrid {
+    @for $i from 1 through $max {
+        .row > .col.col-#{$i}-#{$max} {
+            width: percentage($i/$max);
+        }
+    }
+}
+.container {
+    max-width: 980px;
+    margin: 0 auto;
+}
+
+.row {
+    margin: 0 (-$col-spacing / 2);
+}
+
+.row::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.row > .col {
+    float: left;
+    width: 100%;
+    padding: 0 ($col-spacing / 2);
+    box-sizing: border-box;
+}
+
+.row > .col.col-1-2 {
+    width: 50%;
+}
+
+.row > .col.col-1-5 {
+    width: 20%;
+}
+
+
+
+
+
+.myc {
+    min-height: 100px;
+    background-color: red;
+}
+
+.row > .col::after {
+    content: '';
+    display: block;
+    clear: both;
+    min-height: 200px;
+    background-color: gold;
+}

@@ -1,0 +1,26 @@
+section {
+  height: 300px;
+  border: 10px solid green;
+}
+section:hover {
+  border-color: blue;
+}
+section > div {
+  background-color: yellow;
+}
+section div {
+  border: 10px solid red;
+  margin: 10px;
+}
+section div span {
+  display: inline-block;
+  width: 30%;
+  height: 50px;
+  background-color: green;
+  margin: 10px;
+}
+
+.b {
+  border: 10px solid green;
+  height: 600px;
+}/*# sourceMappingURL=scss.css.map */

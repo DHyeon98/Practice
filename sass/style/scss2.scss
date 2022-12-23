@@ -1,0 +1,32 @@
+// $height: 20px;
+
+// section {
+//     div {
+//         background-color: red;
+//         margin: 10px;
+//         height: $height;
+//         @for $i from 1 through 20 {
+//             &:nth-child(#{$i}) {
+//                 height: $height * $i;
+//             }
+//         }
+//     }
+// }
+
+$named-colors: 'red', 'yellow', 'black', 'gold';
+
+section {
+    div {
+        height: 100px;
+        background-color: blue;
+    }
+}
+
+$i: 0;
+
+@each $color in $named-colors {
+    $i: $i + 1;
+    section div:nth-child(#{$i}){
+        background-color: #{$color};
+    }
+}
