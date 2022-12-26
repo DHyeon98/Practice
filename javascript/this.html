@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">this 호출</button>
+    <script>
+        // this는 함수가 호출된때 결정된다.
+        // 화살표 함수에서는 this는 함수가 속해있는 곳의 상위 this를 계승 받는다. 
+        // const car = {
+        //     name : 'KIA',
+        //     getName : function() {
+        //         console.log('car getName', this)
+        //     }
+        // }
+
+        // const globalCar = car.getName;
+        // globalCar();
+
+        // const car2 = {
+        //     name : 'hyundai',
+        //     getName: car.getName
+        // }
+        // // car2.getName();
+        // const bindGetname = car2.getName.bind(car);
+        // bindGetname();
+
+        // const btn = document.querySelector('#btn');
+        // btn.addEventListener('click', car.getName.bind(car));
+
+        // ------------------------------------------
+        const testCar = {
+            name : 'benz',
+            getName : function() {
+                console.log('getname', this);
+                const innerFunc = () => {
+                    console.log("innerFunc", this);
+                };
+                innerFunc();
+            },
+        };
+
+        testCar.getName();
+    </script>
+</body>
+</html>
