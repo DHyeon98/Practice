@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+</head>
+<body>
+    <section>
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+    </section>
+    <script>
+        let divElements = document.getElementsByTagName('div');
+        // for(i=0; i < divElements.length; i++) {
+        //     divElements[i].innerHTML = (i + 1) + "번";
+        // }
+        // divElements[0].style.color = 'red';
+        // divElements[1].style.color = 'red';
+        // divElements[2].style.color = 'red';
+        // divElements[3].style.color = 'red';
+
+        // for(i=0; i < divElements.length; i++) {
+        //     divElements[i].style.color = 'red';
+        // }
+
+
+        // window == 옷가게 점원
+        // $ == 포장하다
+        // div == 옷
+
+        // 옷가게 점원에게 포장하게 한다. 무엇을? div를
+        window.$('div').append('번');
+        
+        function 포장() {
+            return 1;
+        }
+
+        let a = window.포장();
+        console.log(a);
+    </script>
+</body>
+</html>
