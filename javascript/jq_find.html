@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <style>
+        div {
+            padding: 10px;
+            background-color: gold;
+            margin: 10px;
+        }
+
+        section {
+            border: 10px solid red;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100px; height: 100px;
+            background-color: red;
+            margin: 10px;
+        }
+
+        nav > article {
+            width: 80%; height: 80%; background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+        <div>10</div>
+    </section>
+
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+    <div>6</div>
+    <div>7</div>
+    <div>8</div>
+    <div>9</div>
+    <div>10</div>
+
+    <nav><article>1</article></nav>
+    <nav><article>1</article></nav>
+    <nav><article>1</article></nav>
+    <script>
+        // find == 정해진 틀 안에서 찾는다
+        let $section = $('section');
+        let $div2 = $section.find('div');
+        console.log($div2.length);
+
+        let $nav = $('nav');
+        $nav.click(function() {
+            let $this = $(this);
+            let $article = $this.find('article');
+            $article.css('background-color', 'black');
+        })
+    </script>
+</body>
+</html>

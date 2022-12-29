@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <style>
+        div {
+            width: 100px; height: 100px;
+            background-color: blue;
+            margin: 10px;
+            display: inline-block;
+        }
+        div.b {
+            background-color: gold;
+        }
+        /* .a.active {
+            background-color: red;
+        } */
+    </style>
+</head>
+<body>
+    <h1>addClass, removeClass, toggleClass</h1>
+    <div class="a"></div>
+    <div class="a"></div>
+    <div class="a"></div>
+    <div class="a"></div>
+
+    <script>
+        //addClass
+        // let 함수 = function() {
+        //     let $this = $(this);
+        //     console.log($this);
+        //     $this.addClass('active');
+        // };
+        // $('.a').click(함수);
+
+        //removeClass
+        // $('div').click(function() {
+        //     let $this = $(this);
+        //     $this.removeClass('a');
+        // })
+
+        // $('div').dblclick(function() {
+        //     let $dbl = $(this);
+        //     $dbl.addClass('a');
+        // })
+
+        // toggleClass
+        let $div = $('div');
+
+        $div.click(function() {
+            // $(this).toggleClass('b');
+
+            if($(this).hasClass('b')) {
+                $(this).removeClass('b');
+            }else {
+                $(this).addClass('b');
+            }
+        })
+    </script>
+</body>
+</html>

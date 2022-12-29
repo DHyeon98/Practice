@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <style>
+        article {
+            width: 200px; height: 200px;
+            background-color: blue;
+            margin: 10px;
+        }
+
+        article nav {
+            width: 80%; height: 80%;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <article>
+        <nav></nav>
+    </article>
+    <article>
+        <nav></nav>
+    </article>
+    <article>
+        <nav></nav>
+    </article>
+
+    <script>
+        // closest == 가장 가까운 거 하나
+        $('nav').click(function() {
+            let $this = $(this);
+            let $article = $this.closest('article');
+            $article.css('background-color', 'gold');
+        })
+    </script>
+</body>
+</html>
