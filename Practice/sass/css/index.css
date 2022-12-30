@@ -1,0 +1,63 @@
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+  color: #000;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  padding: 0 20px;
+  z-index: 1;
+  width: 100vw;
+  height: 10vh;
+  background-color: rgba(192, 146, 116, 0.5);
+}
+header .login {
+  width: 60vw;
+  line-height: 16.6666666667px;
+  margin: auto;
+}
+header .login ul {
+  display: flex;
+  justify-content: flex-end;
+}
+header .login ul li {
+  display: inline-block;
+}
+header .login ul li:last-child a {
+  padding-right: 20px;
+  border-style: none;
+}
+header .login ul li a {
+  padding: 0 20px;
+  color: rgb(104, 103, 103);
+  font-size: 12px;
+  border-right: 1px solid rgb(156, 156, 156);
+}
+header nav {
+  display: flex;
+  justify-content: space-between;
+  width: 60vw;
+  margin: auto;
+  line-height: 50px;
+}
+header nav li {
+  padding: 0 20px;
+  display: inline-block;
+}
+
+main {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: -1;
+  margin: auto;
+  width: 100vw;
+  height: 100vh;
+  background: url("https://cdn.pixabay.com/photo/2015/12/06/20/10/christmas-bauble-1079926_960_720.jpg") no-repeat center;
+  background-size: cover;
+}/*# sourceMappingURL=index.css.map */
