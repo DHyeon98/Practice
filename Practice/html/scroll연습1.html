@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>특정 지역 scroll 이벤트 활용하기</title>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <style>
+        * {
+            margin: 0; padding: 0;
+        }
+        img {
+            width: 500px; height: 500px;
+            transform: translateY(-110%);
+            transition: 1s;
+        }
+        .box {
+            width: 1000px; height: 1277px;
+            margin: auto;
+        }
+        .box1 {
+            background-color: antiquewhite;
+        }
+        .box2 {
+            background-color: aqua;
+            overflow: hidden;
+        }
+        .box3 {
+            background-color: black;
+        }
+        .box4 {
+            background-color: blueviolet;
+        }
+
+
+
+        .btn {
+            position: fixed;
+            top: 10px;
+            padding: 10px;
+            z-index: 100;
+        }
+        .btn.btn_1 {
+            left: 30%;
+        }
+        .btn.btn_2 {
+            left: 40%;
+        }
+        .btn.btn_3 {
+            left: 50%;
+        }
+        .btn.btn_4 {
+            left: 60%;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="box_1()" class="btn btn_1">box1</button>
+    <button onclick="box_2()" class="btn btn_2">box2</button>
+    <button onclick="box_3()" class="btn btn_3">box3</button>
+    <button onclick="box_4()" class="btn btn_4">box4</button>
+    <div class="box box1"></div>
+    <div class="box box2">
+        <img class="phone" src="phone.png" alt="폰">
+    </div>
+    <div class="box box3"></div>
+    <div class="box box4"></div>
+
+    <script>
+        let btn = document.querySelector('.btn');
+        let box1 = document.querySelector('.box1');
+        let box2 = document.querySelector('.box2');
+        let box3 = document.querySelector('.box3');
+        let box4 = document.querySelector('.box4');
+        let phone = $('.phone');
+
+        function box_1() {            
+            box1.scrollIntoView({behavior:'smooth'});
+        }
+        function box_2() {
+            box2.scrollIntoView({behavior:'smooth'});
+        }
+        function box_3() {
+            box3.scrollIntoView({behavior:'smooth'});
+        }
+        function box_4() {
+            box4.scrollIntoView({behavior:'smooth'});
+        }
+
+        let box2_top = $('.box2').offset();
+        $(window).scroll(function() {
+            console.log($(window).scrollTop());
+            // console.log($('.box2').offset());
+            if($(window).scrollTop() > box2_top.top-1) {
+                // $('.box.box1').css('backgroundColor','red');
+                phone.css('transform', 'translateY(50%)')
+            }else {
+                phone.css('transform', 'translateY(-110%)')
+            }
+        })
+
+        // offset()은 그 개체의 고정된 값을 준다.
+        // scrollTop()은 window의 top 값을 준다.
+    </script>
+</body>
+</html>

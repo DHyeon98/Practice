@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js scroll 연습</title>
+    <style>
+        * {
+            margin: 0; padding: 0;
+        }
+        .box {
+            width: 1000px; height: 1277px;
+            margin: auto;
+        }
+        .box1 {
+            background-color: antiquewhite;
+        }
+        .box2 {
+            background-color: aqua;
+        }
+        .box3 {
+            background-color: black;
+        }
+        .box4 {
+            background-color: blueviolet;
+        }
+
+
+
+        .btn {
+            position: fixed;
+            top: 10px;
+            padding: 10px;
+        }
+        .btn.btn_1 {
+            left: 30%;
+        }
+        .btn.btn_2 {
+            left: 40%;
+        }
+        .btn.btn_3 {
+            left: 50%;
+        }
+        .btn.btn_4 {
+            left: 60%;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="box_1()" class="btn btn_1">box1</button>
+    <button onclick="box_2()" class="btn btn_2">box2</button>
+    <button onclick="box_3()" class="btn btn_3">box3</button>
+    <button onclick="box_4()" class="btn btn_4">box4</button>
+    <div class="box box1"></div>
+    <div class="box box2"></div>
+    <div class="box box3"></div>
+    <div class="box box4"></div>
+    <script>
+        let btn = document.querySelector('.btn');
+        let box1 = document.querySelector('.box1');
+        let box2 = document.querySelector('.box2');
+        let box3 = document.querySelector('.box3');
+        let box4 = document.querySelector('.box4');
+
+
+        function box_1() {            
+            box1.scrollIntoView({behavior:'smooth'});
+        }
+        function box_2() {
+            box2.scrollIntoView({behavior:'smooth'});
+        }
+        function box_3() {
+            box3.scrollIntoView({behavior:'smooth'});
+        }
+        function box_4() {
+            box4.scrollIntoView({behavior:'smooth'});
+        }
+        // btn.addEventListener('click', function() {
+        //     box1.scrollIntoView();
+        // })
+        addEventListener('scroll', function() {
+            console.log(Math.floor(scrollY));
+        })
+    </script>
+</body>
+</html>
