@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <style>
+        .aa {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            height: 3000px;
+        }
+        .container {
+            overflow: hidden;
+            position: relative;
+            width: 500px; height: 500px;
+            margin: 0 auto;
+            border: 1px solid green;
+        }
+
+        .box {
+            position: absolute;
+            bottom: -100px; 
+            width: 100px; height: 100px;
+            background-color: aqua;
+            animation-name: go;
+            animation-duration: 2s;
+            animation-direction: alternate;
+            animation-fill-mode: forwards;
+            animation-play-state: paused;
+        }
+        .box1 {
+            opacity: 0;
+            position: absolute;
+            bottom: 0;
+            width: 100px; height: 100px;
+            background-color: red;
+            animation-name: gogo;
+            animation-duration: 2s;
+            animation-delay: 1s;
+            animation-direction: alternate;
+            animation-fill-mode: forwards;
+            animation-play-state: paused;
+        }
+
+        @keyframes go {
+            from {
+                bottom: -100px;
+            }
+            to {
+                bottom: 0px;
+                opacity: 0;
+            }
+        }
+
+        @keyframes gogo {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="aa">
+        <div class="container">
+            <div class="box"></div>
+            <div class="box1"></div>
+        </div>
+    </div>
+    <script>
+
+        $(window).scroll(function(){
+            if(scrollY > $('.container').offset().top) {
+                $('.box').css('animation-play-state', 'running');
+                $('.box1').css('animation-play-state', 'running');
+            }
+        })
+    </script>
+</body>
+</html>
